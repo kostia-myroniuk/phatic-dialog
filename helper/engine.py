@@ -15,14 +15,14 @@ class AnswerEngine:
             if len(template) == 1 and question.find(template) != -1 and answer.find(template) != -1:
                 return answer
 
-        if template.find("<c>") != -1:
-            template = template.replace("<c>", "")
+        if template.find("$w") != -1:
+            template = template.replace("$w", "")
             pattern = re.compile(rf"((?:{template}\s))(\w+)")
             match = pattern.search(question)
             if match is None:
                 return None
             match = match.group(0).replace(template, "").strip()
-            return answer.replace("<c>", match)
+            return answer.replace("$w", match)
 
         return answer if question.find(template) != -1 else None
 
