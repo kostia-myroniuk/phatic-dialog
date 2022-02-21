@@ -24,7 +24,12 @@ class AnswerEngine:
             match = match.group(0).replace(template, "").strip()
             return answer.replace("$w", match)
 
-        return answer if question.find(template) != -1 else None
+        if question.find(template) == 0:
+            return answer
+        elif question.find(" " + template) != -1:
+            return answer
+        else:
+            return None
 
 
     def create_answer(self, question):
