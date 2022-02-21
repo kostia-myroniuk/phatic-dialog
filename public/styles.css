@@ -82,4 +82,23 @@
       transition: .5s;
     }
 
+    .message-from {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 5px;
+      background-color: #dff2ff;
+    }
+    
+    .message-to {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 5px;
+      background-color: #dfe2ff;
+    }
+
+    input[type="text"] {
+      width: 500px;
+    }
   

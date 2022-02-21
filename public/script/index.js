@@ -37,15 +37,22 @@ const fetchPost = async (link, jsonObject) => {
 const startPoint = async () => {
   const chatInput = document.getElementById("chatinput");
   const sendButton = document.getElementById("sendbtn");
+  sendButton.innerText = "Відправити";
   sendButton.addEventListener("click", async () => {
     const inputValue = chatInput.value;
+    if (inputValue.trim() == "") {
+      return;
+    }
+    
     const reqBody = {message: inputValue}
     const response = await fetchPost(url, reqBody);
 
     const elemQ = document.createElement('div');
+    elemQ.classList.add("message-from");
     elemQ.innerText = "Ви: " + inputValue;
 
     const elemA = document.createElement('div');
+    elemA.classList.add("message-to");
     elemA.innerText = "Бот: " + response.row;
     
     chatInput.parentNode.insertBefore(elemQ, chatInput);
