@@ -1,0 +1,20 @@
+{
+  "name": "it_lab_django",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "webpack": "^5.58.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx webpack",
+    "start": "npx webpack && python -m sanic server.app"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/vladyslav_honchar/it_lab_django#readme"
+}
